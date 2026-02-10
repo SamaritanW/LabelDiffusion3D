@@ -1,0 +1,63 @@
+# data
+/data/
+
+# python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+.env
+
+# logs & checkpoints (按你项目需要改名)
+*.log
+wandb/
+runs/
+checkpoints/
+outputs/
+tmp/
+
+# system
+.DS_Store
+
+# temp / embedded repo
+temp_nnunet/
+
+
+# notebooks
+.ipynb_checkpoints/
+
+# images / figures
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.tif
+*.tiff
+*.bmp
+
+# results / logs
+results/
+vis_results/
+wandb/
+runs/
+outputs/
+logs/
+tmp/
+
+# checkpoints / models
+*.pth
+*.pt
+*.ckpt
+
+# numpy / medical volumes
+*.npy
+*.npz
+*.nii
+*.nii.gz
+*.mha
+*.mhd

@@ -15,8 +15,14 @@ except ImportError:
 class vit_img_wrap(nn.Module):
     def __init__(self, clip_model='ViT-L/14', device='cpu', center=(0.4914, 0.4822, 0.4465), std=(0.2023, 0.1994, 0.2010)):
         super().__init__()
+        import os
+        # 直接写死路径
+        cache_path = "/data/users/baohengl/cache/clip"
+        if not os.path.exists(cache_path):
+            os.makedirs(cache_path)
 
-        self.model, self.preprocess = clip.load(clip_model, device)
+        self.model, self.preprocess = clip.load(clip_model, device, download_root=cache_path)
+
         self.name = '-'.join(clip_model.split('/'))
         self.device = device
         self.dim = self.model.text_projection.shape[1]
